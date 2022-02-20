@@ -41,17 +41,17 @@ pipeline {
                             repository: 'maven-central-repo',
                             credentialsId: 'nexus-admin',
                             artifacts: [
-                                [artifactId: pom.artifactId,
+                                [artifactId: 'pom.my-app',
                                 classifier: '',
                                 file: artifactPath,
                                 type: pom.packaging],
-                                [artifactId: pom.artifactId,
+                                [artifactId: 'pom.my-app',
                                 classifier: '',
                                 file: "pom.xml",
                                 type: "pom"]
                             ]
 
-                                             );
+                       );
                     } else {
                         error "*** File: ${artifactPath}, could not be found";
                     }
