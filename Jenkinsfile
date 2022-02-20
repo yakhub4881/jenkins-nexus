@@ -18,14 +18,6 @@ pipeline{
                 sh 'mvn clean package'
             }
         }
-        stage ('SonarQube Analysis')
-        {
-            steps{
-                withSonarQubeEnv('SonarQube8.9.2') {
-                sh 'mvn sonar:sonar'
-                }                
-            }
-        }
         stage ('Upload Artifact To Nexus Publisher')
         {
             steps{
